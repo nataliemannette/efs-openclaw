@@ -1,0 +1,61 @@
+{
+  "gateway": {
+    "port": 18789,
+    "bind": "loopback",
+    "auth": {
+      "mode": "token"
+    },
+    "reload": {
+      "mode": "hybrid"
+    },
+    "controlUi": {
+      "dangerouslyAllowHostHeaderOriginFallback": true
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "amazon-bedrock/us.anthropic.claude-sonnet-4-6-20250514-v1:0"
+      },
+      "memorySearch": {
+        "enabled": true,
+        "sources": ["memory", "sessions"],
+        "sync": {
+          "onSessionStart": true,
+          "watch": true
+        }
+      },
+      "workspace": "/home/node/.openclaw/workspace"
+    },
+    "list": [
+      {
+        "id": "nina",
+        "name": "Nina Everly",
+        "default": true,
+        "model": {
+          "primary": "amazon-bedrock/us.anthropic.claude-sonnet-4-6-20250514-v1:0"
+        },
+        "subagents": {
+          "allowAgents": ["*"],
+          "model": {
+            "primary": "amazon-bedrock/us.anthropic.claude-sonnet-4-6-20250514-v1:0"
+          }
+        }
+      }
+    ]
+  },
+  "channels": {
+    "whatsapp": {
+      "accounts": {
+        "nina": {}
+      },
+      "defaultAccount": "nina",
+      "dmPolicy": "allowlist",
+      "allowFrom": ["+16303615411"],
+      "ackReaction": {
+        "emoji": "🏡",
+        "direct": true
+      }
+    }
+  }
+}
