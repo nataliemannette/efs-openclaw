@@ -45,17 +45,12 @@
     ]
   },
   "channels": {
-    "whatsapp": {
-      "accounts": {
-        "nina": {}
-      },
-      "defaultAccount": "nina",
+    "imessage": {
+      "enabled": true,
+      "cliPath": "/usr/local/bin/imsg",
+      "dbPath": "/Users/anthonyloss/Library/Messages/chat.db",
       "dmPolicy": "allowlist",
-      "allowFrom": ["+16303615411"],
-      "ackReaction": {
-        "emoji": "🏡",
-        "direct": true
-      }
+      "allowFrom": ["+16303615411", "+16308021235"]
     }
   }
 }
